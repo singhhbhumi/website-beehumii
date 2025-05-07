@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Decoration</title>
+  <link rel="stylesheet" href="table.css">
+</head>
+<body>
+  <h1 class="page-title">Table Decoration</h1>
+
+  <div class="table-grid">
+    <!-- Flower Vase -->
+    <div class="table-item item-1">
+      <div class="image-container">
+        <img src="./FLOWER VASE.jpg" alt="Flower Vase">
+        <div class="info-box">
+          <h3>FLOWER VASE</h3>
+          <p>Unique flower vase</p>
+          <p class="price">RS. 399</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flower Lamp -->
+    <div class="table-item item-2">
+      <div class="image-container">
+        <img src="./FLOWER LAMP.jpg" alt="Flower Lamp">
+        <div class="info-box">
+          <h3>FLOWER LAMP</h3>
+          <p>Unique tulip flower lamp</p>
+          <p class="price">RS. 499</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book Organiser -->
+    <div class="table-item item-3">
+      <div class="image-container">
+        <img src="./BOOK ORGANISER.jpg" alt="Book Organiser">
+        <div class="info-box">
+          <h3>BOOK ORGANISER</h3>
+          <p>Book organiser with flower vase</p>
+          <p class="price">RS. 299</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Headphone Holder -->
+    <div class="table-item item-4">
+      <div class="image-container">
+        <img src="./HEADPHONES HOLDER.jpg" alt="Headphone Holder">
+        <div class="info-box">
+          <h3>HEADPHONE HOLDER</h3>
+          <p>Hollow headphone holder</p>
+          <p class="price">RS. 199</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs Holder -->
+    <div class="table-item item-5">
+      <div class="image-container">
+        <img src="./SPECS HOLDER.jpg" alt="Specs Holder">
+        <div class="info-box">
+          <h3>SPECS HOLDER</h3>
+          <p>Squidward tentacles</p>
+          <p class="price">RS. 199</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const containers = document.querySelectorAll('.image-container');
+        let isExpanded = false;
+        
+        containers.forEach(container => {
+            container.addEventListener('click', function(event) {
+                if (!isExpanded) {
+                    this.classList.add('expanded');
+                    document.body.classList.add('overlay-active');
+                    isExpanded = true;
+                } else {
+                    this.classList.remove('expanded');
+                    document.body.classList.remove('overlay-active');
+                    isExpanded = false;
+                }
+                event.stopPropagation();
+            });
+        });
+
+        document.body.addEventListener('click', function() {
+            const expandedContainer = document.querySelector('.image-container.expanded');
+            if (expandedContainer) {
+                expandedContainer.classList.remove('expanded');
+                document.body.classList.remove('overlay-active');
+                isExpanded = false;
+            }
+        });
+    });
+  </script>
+
+</body>
+</html>
+
+

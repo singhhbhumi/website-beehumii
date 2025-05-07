@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home – BEEHUMII</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <!-- Menu Trigger & Items -->
+  <div class="menu-trigger" onclick="toggleMenu()">⋮</div>
+  <div id="menuItems" class="menu-items">
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html">Sign In</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Main Section (Hero Section) -->
+  <div class="main-content">
+    <div class="brand-box">
+      <a href="category.html" class="brand-name">BEEHUMII</a>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About BEEHUMII</h2>
+    <p>Welcome to <strong>BEEHUMII</strong>—your one-stop destination for modern wall and table décor. Transform your spaces into expressions of creativity and personality.</p>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <p>&copy; 2025 BEEHUMII | Email: beehumii@gmail.com | Instagram: @beehumii | PHONE NO: +91 9310266282</p>
+  </footer>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('menuItems');
+      m.style.display = (m.style.display === 'block') ? 'none' : 'block';
+    }
+    document.addEventListener('click', e => {
+      const m = document.getElementById('menuItems');
+      const t = document.querySelector('.menu-trigger');
+      if (!m.contains(e.target) && !t.contains(e.target)) m.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
+
+

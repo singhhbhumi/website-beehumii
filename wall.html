@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wall Decoration</title>
+  <link rel="stylesheet" href="wall.css">
+</head>
+<body>
+  <h1 class="page-title">Wall Decoration</h1>
+
+  <div class="wall-grid">
+    <!-- Top Left -->
+    <div class="wall-item item-1">
+      <div class="image-container">
+        <img src="./SPIDER WEB CORNER.jpg" alt="Decor 1">
+        <div class="info-box">
+          <h3>SPIDER WEB CORNER</h3>
+          <p>Decorative corner piece</p>
+          <p class="price">RS. 299</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Right -->
+    <div class="wall-item item-2">
+      <div class="image-container">
+        <img src="./SHELL FRAME.jpg" alt="Decor 2">
+        <div class="info-box">
+          <h3>SHELL FRAME</h3>
+          <p>Antique shell frame <br>Set of two</p>
+          <p class="price">RS. 399</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center -->
+    <div class="wall-item item-3">
+      <div class="image-container">
+        <img src="./JEWELLARY ORGANISER FRAME.jpg" alt="Decor 3">
+        <div class="info-box">
+          <h3>JEWELLARY ORGANISER FRAME</h3>
+          <p>Set of 3 different sized frames</p>
+          <p class="price">RS. 499</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Left -->
+    <div class="wall-item item-4">
+      <div class="image-container">
+        <img src="./WOODEN WALL VASE.jpg" alt="Decor 4">
+        <div class="info-box">
+          <h3>WALL VASE</h3>
+          <p>Wooden vase frame</p>
+          <p class="price">RS. 499</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Right -->
+    <div class="wall-item item-5">
+      <div class="image-container">
+        <img src="./STRING OF BOW.jpg" alt="Decor 5">
+        <div class="info-box">
+          <h3>STRING OF BOW</h3>
+          <p>Corner decor</p>
+          <p class="price">RS. 199</p>
+          <div class="button-group">
+            <button class="action-btn">Add to Cart</button>
+            <button class="action-btn buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const containers = document.querySelectorAll('.image-container');
+        let isExpanded = false;
+        
+        containers.forEach(container => {
+            container.addEventListener('click', function(event) {
+                if (!isExpanded) {
+                    this.classList.add('expanded');
+                    document.body.classList.add('overlay-active');
+                    isExpanded = true;
+                } else {
+                    this.classList.remove('expanded');
+                    document.body.classList.remove('overlay-active');
+                    isExpanded = false;
+                }
+                event.stopPropagation();
+            });
+        });
+
+        document.body.addEventListener('click', function() {
+            const expandedContainer = document.querySelector('.image-container.expanded');
+            if (expandedContainer) {
+                expandedContainer.classList.remove('expanded');
+                document.body.classList.remove('overlay-active');
+                isExpanded = false;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
+

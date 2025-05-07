@@ -1,0 +1,45 @@
+/* Reset & Base */
+* { margin:0; padding:0; box-sizing:border-box; }
+body, html { height:100%; font-family:'Segoe UI', sans-serif; color:#fff; background:#000; }
+
+/* Floating Menu */
+.menu-trigger {
+  position: fixed; top: 20px; right: 20px;
+  font-size: 32px; cursor: pointer;
+  background: #333; padding: 6px 10px; border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); z-index: 1000;
+}
+.menu-items {
+  display: none; position: fixed; top: 58px; right: 20px;
+  background: #222; border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); overflow: hidden; z-index: 999;
+}
+.menu-items a {
+  display: block; padding: 10px 16px;
+  text-decoration: none; color: #fff; font-size: 0.95rem;
+}
+.menu-items a:hover { background: #444; }
+
+/* Hero */
+.main-content {
+  background: url('./MAIN\ IMAGE.jpg') no-repeat center/cover;
+  filter: grayscale(100%) contrast(120%);
+  height: 100vh; display: flex; justify-content: center; align-items: center;
+}
+.brand-box {
+  background: rgba(255, 255, 255, 0.6); padding: 40px 60px; border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: center;
+}
+.brand-name { font-size: 3rem; color: #000; text-decoration: none; }
+
+/* About */
+.about {
+  background: #222; padding: 60px 20px; text-align: center;
+}
+.about h2 { font-size: 2.5rem; color: #fff; margin-bottom: 16px; }
+.about p { font-size: 1.1rem; max-width: 700px; margin: auto; line-height: 1.6; color: #ddd; }
+
+/* Footer */
+footer {
+  background: #333; color: #bbb; text-align: center; padding: 20px; font-size: 0.9rem;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sign Up – DecorBrand</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+  <!-- Menu -->
+  <div class="menu-trigger" onclick="toggleMenu()">⋮</div>
+  <div id="menuItems" class="menu-items">
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html">Sign In</a>
+    <a href="Main.html">Home</a>
+  </div>
+
+  <!-- Sign Up Form -->
+  <div class="form-container">
+    <h2>Create Account</h2>
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Sign In</a></p>
+    <a href="Main.html" class="back-button">← Back to Home</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('menuItems');
+      m.style.display = (m.style.display==='block')?'none':'block';
+    }
+    document.addEventListener('click', e => {
+      const m = document.getElementById('menuItems');
+      const t = document.querySelector('.menu-trigger');
+      if (!m.contains(e.target) && !t.contains(e.target)) m.style.display='none';
+    });
+    document.getElementById('signupForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      const cp = document.getElementById('confirmPassword').value;
+      if (p!==cp) return alert('Passwords must match');
+      const users = JSON.parse(localStorage.getItem('users')||'[]');
+      if (users.find(x=>x.username===u)) return alert('Username taken');
+      users.push({username:u,password:p});
+      localStorage.setItem('users',JSON.stringify(users));
+      alert('Registered—please sign in');
+      location.href='login.html';
+    });
+  </script>
+</body>
+</html>
